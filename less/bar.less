@@ -1,0 +1,48 @@
+
+.html-bar-chart div {
+  font: 10px sans-serif;
+  background-color: #336699;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.svg-bar-chart rect, 
+.column-bar-chart rect,
+.ordinal-bar-chart rect {
+  fill: #336699;
+}
+
+.svg-bar-chart text, 
+.column-bar-chart text,
+.ordinal-bar-chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.column-bar-chart text, 
+.ordinal-bar-chart text { 
+  text-anchor: middle;
+}
+
+.bar:hover {
+  fill: #538CC6;
+}
+
+.axis text {
+  font: 10px sans-serif;
+  fill: #000;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
