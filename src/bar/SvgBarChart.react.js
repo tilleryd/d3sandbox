@@ -43,7 +43,7 @@ class SvgBarChart extends React.Component {
 
   render() {
   	return (
-  		<Chart title="SVG Bar Chart">
+  		<Chart title="SVG">
   		  <svg className="svg-bar-chart"></svg>
       </Chart>
     );

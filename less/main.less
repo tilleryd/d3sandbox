@@ -8,20 +8,53 @@ body {
 
 h1, h2, h3, h4 {
   margin: 0;
+  color: #333;
+}
+
+#app {
+	.overlay();
+	width: 100%;
+	height: 100%;
 }
 
 .page-wrapper {
-  padding: 10px;
-  margin: 10px;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-header h1 {
+.main {
+	.overlay(0, 0, 0, 200px);
+	margin: 20px;
+
+	h1 { text-align: center; }
+}
+
+nav {
+	.overlay();
+	width: 200px;
+	height: 100%;
+	background: #333;
+
+
+	ul {
+		margin-top: 20px;
+		li { list-style: none; }
+		a { 
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.2em;
+		}
+	}
+}
+
+header h1 { text-align: center; }
+
+.home p {
 	text-align: center;
 }
 
-.spacer {
-	height: 20px;
-}
+.spacer { height: 20px; }
 
 .html-bar-chart div {
   font: 10px sans-serif;

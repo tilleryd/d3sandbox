@@ -28,7 +28,7 @@ class HtmlBarChart extends React.Component {
 
   render() {
   	return (
-  		<Chart title="HTML Bar Chart">
+  		<Chart title="HTML">
   		  <div className="html-bar-chart"></div>
       </Chart>
     );

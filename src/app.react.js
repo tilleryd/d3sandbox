@@ -1,18 +1,38 @@
-// app.js
+// app.react.js
 
 import React from 'react';
+import Router from 'react-router';
 
-import HtmlBarChart from 'bar/HtmlBarChart.react';
-import SvgBarChart from 'bar/svgBarChart.react';
+// Routes
+import Bar from 'routes/Bar.react';
+import Home from 'routes/Home.react';
 
-React.render(
-  <div className="page-wrapper">
-    <header>
-      <h1>d3 Charts</h1>
-    </header>     
-    <HtmlBarChart />
-    <div className="spacer" />
-    <SvgBarChart />
-  </div>,
-  document.getElementById('app')
+let { DefaultRoute, Link, Route, RouteHandler } = Router;
+
+let App = React.createClass({
+  render() {
+  	return(
+			<div className="page-wrapper">
+		    <nav>
+          <ul>
+            <li><Link to="app">Home</Link></li>
+            <li><Link to="bar">Bar Charts</Link></li>
+          </ul>
+		    </nav>
+		    <RouteHandler {...this.props} />
+		  </div>
+	  )
+	}
+});
+
+let routes = (
+  <Route name="app" path="/" handler={App}>
+    <Route name="bar" handler={Bar}/>
+    <DefaultRoute handler={Home}/>
+  </Route>
 );
+
+
+Router.run(routes, Router.HashLocation, (Root) => {
+  React.render(<Root/>, document.getElementById('app'));
+});
