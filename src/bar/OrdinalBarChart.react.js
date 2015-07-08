@@ -37,7 +37,7 @@ class OrdinalBarChart extends React.Component {
 		  .append("g")
 		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		d3.tsv("alphabet.tsv", type, function(error, data) {
+		d3.tsv("data/alphabet.tsv", type, function(error, data) {
 		  x.domain(data.map(function(d) { return d.letter; }));
 		  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 

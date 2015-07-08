@@ -21,7 +21,7 @@ class SvgBarChart extends React.Component {
 		let chart = d3.select(".svg-bar-chart")
 		    .attr("width", width);
 
-		d3.csv("barchartdata.csv", type, function(error, data) {
+		d3.csv("data/barchart.csv", type, function(error, data) {
       x.domain([0, d3.max(data, function(d) { return d.value; })]);
       
       chart.attr("height", barHeight * data.length);

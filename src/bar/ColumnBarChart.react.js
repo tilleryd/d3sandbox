@@ -22,7 +22,7 @@ class ColumnBarChart extends React.Component {
 		    .attr("width", width)
 		    .attr("height", height);
 
-		d3.csv("barchartdata.csv", type, function(error, data) {
+		d3.csv("data/barchart.csv", type, function(error, data) {
       y.domain([0, d3.max(data, function(d) { return d.value; })]);
       
       let barWidth = width / data.length;
