@@ -25,7 +25,9 @@ h1, h2, h3, h4 {
 
 .main {
 	.overlay(0, 0, 0, 200px);
-	margin: 20px;
+	padding: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 
 	h1 { text-align: center; }
 }
@@ -54,7 +56,7 @@ header h1 { text-align: center; }
 	text-align: center;
 }
 
-.spacer { height: 20px; }
+.spacer { height: 40px; }
 
 .html-bar-chart div {
   font: 10px sans-serif;
@@ -65,12 +67,20 @@ header h1 { text-align: center; }
   color: white;
 }
 
-.svg-bar-chart rect {
+.svg-bar-chart rect, 
+.column-bar-chart rect,
+.ordinal-bar-chart rect {
   fill: steelblue;
 }
 
-.svg-bar-chart text {
+.svg-bar-chart text, 
+.column-bar-chart text,
+.ordinal-bar-chart text {
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
+}
+
+.column-bar-chart text, .ordinal-bar-chart text { 
+  text-anchor: middle;
 }

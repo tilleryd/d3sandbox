@@ -2,8 +2,10 @@
 
 import React from 'react';
 
+import ColumnBarChart from 'bar/ColumnBarChart.react';
 import HtmlBarChart from 'bar/HtmlBarChart.react';
-import SvgBarChart from 'bar/svgBarChart.react';
+import OrdinalBarChart from 'bar/OrdinalBarChart.react';
+import SvgBarChart from 'bar/SvgBarChart.react';
 
 var Bar = React.createClass({
   render() {
@@ -13,6 +15,10 @@ var Bar = React.createClass({
         <HtmlBarChart />
         <div className="spacer" />
         <SvgBarChart />
+        <div className="spacer" />
+        <ColumnBarChart />
+        <div className="spacer" />
+        <OrdinalBarChart />
       </div>
     );
   }
