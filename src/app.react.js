@@ -1,12 +1,14 @@
 // app.react.js
 
+global.$ = global.jQuery = require('jquery');
+
 import React from 'react';
 import Router from 'react-router';
 
 // Routes
 import Bar from 'routes/Bar.react';
 import Home from 'routes/Home.react';
-import Network from 'routes/Network.react';
+import Visualizations from 'routes/Visualizations.react';
 
 let { DefaultRoute, Link, Route, RouteHandler } = Router;
 
@@ -18,7 +20,7 @@ let App = React.createClass({
           <ul>
             <li><Link to="app">Home</Link></li>
             <li><Link to="bar">Bar Charts</Link></li>
-            <li><Link to="network">Network Charts</Link></li>
+            <li><Link to="visualizations">Visualizations</Link></li>
           </ul>
 		    </nav>
 		    <RouteHandler {...this.props} />
@@ -30,7 +32,7 @@ let App = React.createClass({
 let routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="bar" handler={Bar}/>
-    <Route name="network" handler={Network}/>
+    <Route name="visualizations" handler={Visualizations}/>
     <DefaultRoute handler={Home}/>
   </Route>
 );

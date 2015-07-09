@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import ColumnBarChart from 'bar/ColumnBarChart.react';
-import HtmlBarChart from 'bar/HtmlBarChart.react';
-import OrdinalBarChart from 'bar/OrdinalBarChart.react';
-import SvgBarChart from 'bar/SvgBarChart.react';
+import ColumnBarChart from 'charts/bar/ColumnBarChart.react';
+import HtmlBarChart from 'charts/bar/HtmlBarChart.react';
+import OrdinalBarChart from 'charts/bar/OrdinalBarChart.react';
+import SvgBarChart from 'charts/bar/SvgBarChart.react';
 
 var Bar = React.createClass({
   render() {

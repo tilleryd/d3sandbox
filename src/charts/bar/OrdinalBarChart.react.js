@@ -2,7 +2,7 @@
 
 import d3 from 'd3';
 
-import Chart from '../components/Chart.react';
+import Chart from '../../components/Chart.react';
 import React from 'react';
 
 class OrdinalBarChart extends React.Component {
