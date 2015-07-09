@@ -20,7 +20,7 @@ let App = React.createClass({
           <ul>
             <li><Link to="app">Home</Link></li>
             <li><Link to="bar">Bar Charts</Link></li>
-            <li><Link to="visualizations">Visualizations</Link></li>
+            <li><Link to="visualizations">Force-Directed</Link></li>
           </ul>
 		    </nav>
 		    <RouteHandler {...this.props} />

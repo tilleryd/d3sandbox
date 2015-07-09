@@ -1,0 +1,194 @@
+{
+  "nodes":[
+    {
+      "name":"Heros",
+      "connections":7,
+      "group":"hero",
+      "id":"hero"
+    },
+    {
+      "name":"Villains",
+      "connections":5,
+      "group":"villain",
+      "id":"villain"
+    },
+    {
+      "name":"Han Solo",
+      "connections":3,
+      "group":"sw-hero",
+      "id":"han_solo"
+    },
+    {
+      "name":"Chewbacca",
+      "connections":3,
+      "group":"sw-hero",
+      "id":"chewbacca"
+    },
+    {
+      "name":"Luke Skywalker",
+      "connections":4,
+      "group":"sw-hero",
+      "id":"luke_skywalker"
+    },
+    {
+      "name":"Darth Vader",
+      "connections":3,
+      "group":"sw-villain",
+      "id":"darth_vader"
+    },
+    {
+      "name":"Boba Fett",
+      "connections":1,
+      "group":"sw-villain",
+      "id":"boba_fett"
+    },
+    {
+      "name":"Emperor Palpatine",
+      "connections":1,
+      "group":"sw-villain",
+      "id":"emperor_palpatine"
+    },
+    {
+      "name":"Aragorn",
+      "connections":4,
+      "group":"lotr-hero",
+      "id":"aragorn"
+    },
+    {
+      "name":"Legolas",
+      "connections":4,
+      "group":"lotr-hero",
+      "id":"legolas"
+    },
+    {
+      "name":"Gimli",
+      "connections":4,
+      "group":"lotr-hero",
+      "id":"gimli"
+    },
+    {
+      "name":"Gandalf",
+      "connections":4,
+      "group":"lotr-hero",
+      "id":"gandalf"
+    },
+    {
+      "name":"Sarumon",
+      "connections":1,
+      "group":"lotr-villain",
+      "id":"sarumon"
+    },
+    {
+      "name":"Sauron",
+      "connections":1,
+      "group":"lotr-villain",
+      "id":"sauron"
+    }
+  ],
+  "links":[
+    {
+        "source": "hero",
+        "target": "han_solo"
+    },
+    {
+        "source": "hero",
+        "target": "chewbacca"
+    },
+    {
+        "source": "hero",
+        "target": "luke_skywalker"
+    },
+    {
+        "source": "han_solo",
+        "target": "chewbacca"
+    },
+    {
+        "source": "han_solo",
+        "target": "luke_skywalker"
+    },
+    {
+        "source": "chewbacca",
+        "target": "luke_skywalker"
+    },
+    {
+        "source": "villain",
+        "target": "darth_vader"
+    },
+    {
+        "source": "villain",
+        "target": "boba_fett"
+    },
+    {
+        "source": "villain",
+        "target": "emperor_palpatine"
+    },
+    {
+        "source": "darth_vader",
+        "target": "boba_fett"
+    },
+    {
+        "source": "darth_vader",
+        "target": "emperor_palpatine"
+    },
+    {
+        "source": "darth_vader",
+        "target": "luke_skywalker"
+    },
+    {
+        "source": "hero",
+        "target": "aragorn"
+    },
+    {
+        "source": "hero",
+        "target": "legolas"
+    },
+    {
+        "source": "hero",
+        "target": "gimli"
+    },
+    {
+        "source": "hero",
+        "target": "gandalf"
+    },
+    {
+        "source": "aragorn",
+        "target": "legolas"
+    },
+    {
+        "source": "aragorn",
+        "target": "gimli"
+    },
+    {
+        "source": "aragorn",
+        "target": "gandalf"
+    },
+    {
+        "source": "legolas",
+        "target": "gimli"
+    },
+    {
+        "source": "legolas",
+        "target": "gandalf"
+    },
+    {
+        "source": "gimli",
+        "target": "gandalf"
+    },
+    {
+        "source": "villain",
+        "target": "sauron"
+    },
+    {
+        "source": "villain",
+        "target": "sarumon"
+    },
+    {
+        "source": "sarumon",
+        "target": "sauron"
+    },
+    {
+        "source": "sarumon",
+        "target": "gandalf"
+    }
+  ]
+}

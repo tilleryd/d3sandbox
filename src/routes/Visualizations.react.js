@@ -2,14 +2,17 @@
 
 import React from 'react';
 
-import InterestGraphView from 'visualizations/InterestGraphView.react';
+import ForceDirectedGraph1 from 'visualizations/ForceDirectedGraph1.react';
+import ForceDirectedGraph2 from 'visualizations/ForceDirectedGraph2.react';
 
 var Visualizations = React.createClass({
   render() {
     return (
-      <div className="main">
-        <h1>Visualizations</h1>
-        <InterestGraphView />
+      <div className="main-content">
+        <h1>Force-Directed</h1>
+        <ForceDirectedGraph1 />
+        <div class="spacer" />
+        <ForceDirectedGraph2 />
       </div>
     );
   }

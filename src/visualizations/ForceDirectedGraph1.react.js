@@ -14,15 +14,15 @@ class InterestGraphView extends React.Component {
 
   componentDidMount() {
     let interestGraph = InterestGraph();
-    d3.json("data/call_me_al.json", function(json) {
-      interestGraph(".interest-graph", json);
+    d3.json("data/interestGraph.json", function(json) {
+      interestGraph("#forceDirected1", json);
     });
   }
 
   render() {
   	return (
-  		<Chart title="Interest Graph">
-  		  <div className="interest-graph"></div>
+  		<Chart title="Graph 1">
+  		  <div id="forceDirected1" className="force-directed-graph"></div>
       </Chart>
     );
   }

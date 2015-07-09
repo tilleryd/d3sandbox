@@ -1,5 +1,5 @@
 import d3 from 'd3';
-import Tooltip from 'visualizations/Tooltip';
+import Tooltip from '../util/Tooltip';
 
 let InterestGraph = function() {
   // variables we want to access
@@ -146,9 +146,9 @@ let InterestGraph = function() {
       match = d.name.toLowerCase().search(searchRegEx);
       if (searchTerm.length > 0 && match >= 0) {
         element
-          .style("fill", "//F38630")
+          .style("fill", "#F38630")
           .style("stroke-width", 2.0)
-          .style("stroke", "//555");
+          .style("stroke", "#555");
         d.searched = true;
       } else {
         d.searched = false;
@@ -192,7 +192,7 @@ let InterestGraph = function() {
       l.target = nodesMap.get(l.target);
 
       // linkedByIndex is used for link sorting
-      linkedByIndex["//#{l.source.id},//#{l.target.id}"] = 1;
+      linkedByIndex[`${l.source.id},${l.target.id}`] = 1;
     });
 
     return data;
@@ -303,8 +303,8 @@ let InterestGraph = function() {
 
   let updateCenters = function(artists) {
     if (layout == "radial") {
-      groupCenters = RadialPlacement().center({"x":width/2, "y":height / 2 - 100})
-        .radius(300).increment(18).keys(artists);
+      //groupCenters = RadialPlacement().center({"x":width/2, "y":height / 2 - 100})
+      //  .radius(300).increment(18).keys(artists);
     }
   }
 
@@ -328,7 +328,7 @@ let InterestGraph = function() {
       .attr("class", "node")
       .attr("cx", function(d) { return d.x; })
       .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return d.radius })
+      .attr("r", function(d) { return d.radius * 1.5; })
       .style("fill", function(d) { return nodeColors(d.artist); })
       .style("stroke", function(d) { return strokeFor(d); })
       .style("stroke-width", 1.0);
@@ -342,10 +342,10 @@ let InterestGraph = function() {
   // enter/exit display for links
   let updateLinks = function() {
     link = linksG.selectAll("line.link")
-      .data(curLinksData, function(d) { return "//${d.source.id}_//${d.target.id}"; });
+      .data(curLinksData, function(d) { return `${d.source.id}_${d.target.id}`; });
     link.enter().append("line")
       .attr("class", "link")
-      .attr("stroke", "//ddd")
+      .attr("stroke", "#ddd")
       .attr("stroke-opacity", 0.8)
       .attr("x1", function(d) { return d.source.x; })
       .attr("y1", function(d) { return d.source.y; })
@@ -360,7 +360,7 @@ let InterestGraph = function() {
     layout = newLayout
     if (layout == "force") {
       force.on("tick", forceTick)
-        .charge(-200)
+        .charge(-350)
         .linkDistance(50);
     } else if (layout == "radial") {
       force.on("tick", radialTick)
@@ -423,7 +423,7 @@ let InterestGraph = function() {
   }
 
   // Mouseover tooltip function
-  let showDetails = function(d,i) {
+  let showDetails = function(d, i) {
     let content = '<p class="main">' + d.name + '</span></p>';
     content += '<hr class="tooltip-hr">';
     content += '<p class="main">' + d.artist + '</span></p>';
@@ -434,9 +434,9 @@ let InterestGraph = function() {
       link
         .attr("stroke", function(l) {
           if (l.source == d || l.target == d) {
-            return "//555";
+            return "#555";
           } else {
-            return "//ddd";
+            return "#ddd";
           }
         })
         .attr("stroke-opacity", function(l) {
@@ -449,7 +449,7 @@ let InterestGraph = function() {
 
       // link.each (l) ->
       //   if l.source == d or l.target == d
-      //     d3.select(this).attr("stroke", "//555")
+      //     d3.select(this).attr("stroke", "#555")
     }
 
     // highlight neighboring nodes
@@ -457,7 +457,7 @@ let InterestGraph = function() {
     node
       .style("stroke", function(n) {
         if (n.searched || neighboring(d, n)) {
-          return "//555";
+          return "#555";
         } else {
           return strokeFor(n);
         }
@@ -484,7 +484,7 @@ let InterestGraph = function() {
         if (!n.searched) {
           return strokeFor(n);
         } else {
-          return "//555";
+          return "#555";
         }
       })
       .style("stroke-width", function(n) {
@@ -495,7 +495,7 @@ let InterestGraph = function() {
         }
       });
     if (link) {
-      link.attr("stroke", "//ddd")
+      link.attr("stroke", "#ddd")
         .attr("stroke-opacity", 0.8);
     }
   }

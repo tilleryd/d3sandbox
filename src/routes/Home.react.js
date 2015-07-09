@@ -6,7 +6,7 @@ var Home = React.createClass({
 
   render() {
     return (
-        <div className="home main">
+        <div className="home main-content">
           <h1>d3 Sanbox</h1>
           <p>This is a sandbox for learning the d3 chart library.</p>
         </div>

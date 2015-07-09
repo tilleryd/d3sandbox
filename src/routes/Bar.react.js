@@ -10,7 +10,7 @@ import SvgBarChart from 'charts/bar/SvgBarChart.react';
 var Bar = React.createClass({
   render() {
     return (
-      <div className="main">
+      <div className="main-content">
         <h1>Bar Charts</h1>
         <HtmlBarChart />
         <div className="spacer" />

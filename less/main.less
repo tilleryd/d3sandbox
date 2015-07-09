@@ -1,6 +1,6 @@
 @import "bar";
 @import "helpers";
-@import "interestGraph";
+@import "forceDirected";
 
 body {
   background: #fff;
@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-.main {
+.main-content {
 	.overlay(0, 0, 0, 200px);
 	padding: 20px;
 	overflow-y: scroll;
@@ -54,12 +54,8 @@ nav {
 
 header h1 { text-align: center; }
 
-.home p {
-	text-align: center;
-}
+.home p { text-align: center; }
 
 .spacer { height: 40px; }
 
-.chart h2 {
-	margin-bottom: 10px;
-}
+.chart h2 { margin-bottom: 10px; }
